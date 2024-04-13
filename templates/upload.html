@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавление файлов</title>
+</head>
+<body>
+    <h1>Добавление файлов</h1>
+    <div class="1div">
+    <form action="/upload2" method="post" enctype="multipart/form-data">
+        <label for="file">Выберите файл:</label>
+        <input type="file" name="file" class="inp" id="file" required>
+        <br> 
+        
+        <div class="color"><input class="but" type="submit" value="Upload"></div>
+    </form>
+        
+    {% if show_view_files_button %}
+        <br>
+        <a href="{{ url_for('list_files') }}"><button class="but">Просмотреть файлы</button></a>
+    {% endif %}
+    </div>
+    <style>
+        body{
+    background-color: #480CA8;
+    font-size: 20px;
+    color: white;
+    }
+    .color input{
+        background: linear-gradient(97deg, #7209B7 39.28%, #CE17A8 67.05%, #F72585 97.48%);
+    }
+    .inp{
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 325px;
+    height: 54px;
+    background: linear-gradient(97deg, #7209B7 39.28%, #CE17A8 67.05%, #F72585 97.48%);
+    color: white;
+    border: 1px solid #920CFB;
+    }
+    .but{
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    width: 175px;
+    height: 54px;
+    background: linear-gradient(97deg, #7209B7 39.28%, #CE17A8 67.05%, #F72585 97.48%);
+    color: white;
+    border: 1px solid #920CFB;
+    }
+    </style>
+
+    <script>
+    </script>
+</body>
+</html>
