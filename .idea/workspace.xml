@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="First commit !!!&#10;Изначальный код проекта">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="устранение оишбки &quot;GET /style.css HTTP/1.1&quot; - 404">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/databasa.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/databasa.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/codeeditor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/codeeditor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lessons.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lessons.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/persona.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/persona.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/self.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/self.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/view_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/view_files.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/welcome.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +29,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -175,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711952873559</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="устранение оишбки &quot;GET /style.css HTTP/1.1&quot; - 404">
+      <created>1713268463151</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713268463151</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -191,6 +200,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit !!!&#10;Изначальный код проекта" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit !!!&#10;Изначальный код проекта" />
+    <MESSAGE value="устранение оишбки &quot;GET /style.css HTTP/1.1&quot; - 404" />
+    <option name="LAST_COMMIT_MESSAGE" value="устранение оишбки &quot;GET /style.css HTTP/1.1&quot; - 404" />
   </component>
 </project>

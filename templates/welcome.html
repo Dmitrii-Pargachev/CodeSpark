@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <style>
+figure{
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-color: #480CA8;
+    font-size: 20px;
+    color: white;
+}
+button{
+    background-color: white;
+    color: black;
+    width: 200px;
+    height: 50px;
+}
+    </style>
 </head>
 <body>
+<figure>
     <h1>Welcome, {{ user[1] }}!</h1>
+    </figure>
+    <figure>
     <button onclick="window.location.href='/register'"> Войти на площадку </button>
-           
+</figure>      
 </body>
 </html>

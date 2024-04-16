@@ -3,15 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Uploaded Files</title>
+    <title>Просмотр загруженных файлов</title>
 </head>
+<style>
+figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+figcaption{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+body{
+    background-color: #480CA8;
+    font-size: 20px;
+    color: white;
+}
+a{
+    color: white;
+}
+button{
+    width: 50px;
+    height: 20px;
+    border-radius: 20px;
+    background: linear-gradient(97deg, #CE17A8 67.05%, #F72585 97.48%);
+    color: white;
+    border: none;
+}
+.a{
+    color: white;
+    text-decoration: none;
+}
+</style>
 <body>
-    <h1>View Uploaded Files</h1>
     
+<figcaption>
+    <button><a class="a" href="/upload">Назад</a></button>
+    <h1>Просмотр загруженных файлов</h1>
+
+</figcaption>
+<figure>
     <ul>
         {% for file in files %}
         <li><a href="{{ url_for('view_file', filename=file[0]) }}" target="_blank">{{ file[1] }}</a></li>
         {% endfor %}
     </ul>
+</figure>
 </body>
 </html>

@@ -92,7 +92,19 @@ def open_codeditor():
 
 @app.route('/self')
 def openself():
-    return render_template('self.html')
+        mail = request.form.get('mail')
+        password = request.form.get('password')
+
+        conn = sqlite3.connect(DATABASE)
+        cursor = conn.cursor()
+
+        cursor.execute('SELECT * FROM user_info WHERE mail = ? AND password = ?', (mail, password))
+        user = cursor.fetchone()
+
+        conn.close()
+
+        
+        return render_template('self.html', user=user)
 
 
 @app.route('/runcode', methods=['POST'])

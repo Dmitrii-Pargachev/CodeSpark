@@ -5,16 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
+<style>
+figure{
+    display: flex;
+    justify-content: center;
+}
+body{
+    background-color: #480CA8;
+    font-size: 20px;
+    color: white;
+}
+.input{
+    width: 200px;
+    height: 20px;
+}
+input{
+    width: 100px;
+}
+</style>
 <body>
+<figure>
     <h1>Login</h1>
-    <form action="/login" method="post">
-        <label for="mail">Email:</label>
-        <input type="text" id="mail" name="mail" required><br>
+    </figure>
+    <figure>
+        <form action="/login" method="post">
+            <label for="mail">Email:</label>
+            <br>    
+            <input class="input" type="text" id="mail" name="mail" required><br>
+<p></p>
+            <label for="password">Password:</label>
+            <br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
+            <input class="input" type="password" id="password" name="password" required><br>
+            <figure>
+            <input type="submit" value="Login">
+            </figure>
+        </form>
+    </figure>
 
-        <input type="submit" value="Login">
-    </form>
 </body>
 </html>
