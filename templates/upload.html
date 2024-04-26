@@ -65,12 +65,32 @@
     </div>
     </figcaption>
 </figure>
+  <div class="footer">&copy;<span id="year"> </span><span> CodeSpark. Все права защищены.</span></div>
     <style>
-        body{
+    body{
     background-color: #480CA8;
     font-size: 20px;
     color: white;
     }
+    .footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: black;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
     figure{
         display: flex;
         justify-content: center;
@@ -78,7 +98,7 @@
     .line{
     text-decoration: none;
     color: white;
-}
+    }
     figcaption{
         display: flex;
         justify-content: center;
@@ -90,8 +110,8 @@
     font-size: 18px;
     font-weight: bold;
     border-radius: 20px;
-    width: 325px;
-    height: 54px;
+    width: auto;
+    height: auto;
     background: linear-gradient(97deg, #7209B7 39.28%, #CE17A8 67.05%, #F72585 97.48%);
     color: white;
     border: 1px solid #920CFB;
@@ -110,6 +130,11 @@
     </style>
 
     <script>
+      let year = document.querySelector("#year");
+
+$(document).ready(function () {
+  year.innerText = new Date().getFullYear();
+});
     </script>
 </body>
 </html>

@@ -72,7 +72,7 @@
               </div>
               <div class="row mt-3">
                   <div class="col-md-12"><label class="labels">Номер телефона</label><input type="text" class="form-control" placeholder="+7-(777)-777-77-77" value=""></div>
-                  <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="examle@email.com" value=""></div>
+                  <div class="col-md-12"><label class="labels">Email</label><input type="text" class="form-control" placeholder="CodeSpark@mail.com" value=""></div>
               </div>
               <div class="row mt-3">
                   <div class="col-md-6"><label class="labels">Страна/Регион</label><input type="text" class="form-control" value="" placeholder="RussianFederation/Chita"></div>
@@ -84,10 +84,33 @@
 </div>
 </div>
 </div>
+<footer>
+    <div class="footer">&copy;<span id="year"> </span><span> CodeSpark. Все права защищены.</span></div>
+</footer>
 <style>
     body{
     background-color: #480CA8;
     font-size: 20px;
+}
+.footer {
+position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: black;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 .menu{
     margin: 5px;
@@ -123,55 +146,13 @@
 .image{
     height: 100vh;
 }
-
-
-
-
-
-
-body {
-    background:  #480CA8
-}
-
-.form-control:focus {
-    box-shadow: none;
-    border-color: #BA68C8
-}
-
 .profile-button {
     background: rgb(99, 39, 120);
     box-shadow: none;
     border: none
 }
-
-.profile-button:hover {
-    background: #682773
-}
-
-.profile-button:focus {
-    background: #682773;
-    box-shadow: none
-}
-
-.profile-button:active {
-    background: #682773;
-    box-shadow: none
-}
-
-.back:hover {
-    color: #682773;
-    cursor: pointer
-}
-
 .labels {
     font-size: 11px
-}
-
-.add-experience:hover {
-    background: #BA68C8;
-    color: #fff;
-    cursor: pointer;
-    border: solid 1px #BA68C8
 }
 </style>
 <script>
@@ -181,6 +162,11 @@ body {
 function dda(){
     document.querySelector('.block').style.left = '-500px';
 }
+let year = document.querySelector("#year");
+
+$(document).ready(function () {
+  year.innerText = new Date().getFullYear();
+});
 </script>
 </body>
 </html>

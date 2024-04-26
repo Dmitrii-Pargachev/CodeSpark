@@ -64,19 +64,39 @@
   <div class="con">
     <div class="downpart">
         <div class="description">
-            Напишите программу, которая выводит «Привет, Яндекс!» (без кавычек) и больше ничего не делает.
+            Напишите программу, которая выводит «Привет, Мир!» (без кавычек) и больше ничего не делает.
             <hr>
             <textarea id="result" cols="100" rows="10"></textarea>
             <div class="con">    
-            <button class="btn1">Отправить</button>
+            <button class="btn1" onmousedown="view()">Отправить</button>
             </div>
         </div>
     </div>
   </div>
+    <div class="footer">&copy;<span id="year"> </span><span> CodeSpark. Все права защищены.</span></div>
     <style>
         body{
     background-color: #480CA8;
     font-size: 20px;
+}
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: black;
+  color: white;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 .menu{
     margin: 5px;
@@ -160,6 +180,15 @@ nav{
 function dda(){
     document.querySelector('.block').style.left = '-500px';
 }
+let year = document.querySelector("#year");
+
+$(document).ready(function () {
+  year.innerText = new Date().getFullYear();
+});
+function view(){
+  document.getElementById("result").style.display = "none";
+};
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 </html>
