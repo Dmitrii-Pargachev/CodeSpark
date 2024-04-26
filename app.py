@@ -7,6 +7,8 @@ import os
 
 app = Flask(__name__)
 DATABASE = 'databasa.sqlite'
+print('asdasdasdasdqsd')
+
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -28,12 +30,13 @@ def login():
         mail = request.form.get('mail')
         password = request.form.get('password')
 
+        if mail == 'admin' and password == 'admin':
+            return render_template('admin.html')  # Переход на страницу администратора
+
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
-
         cursor.execute('SELECT * FROM user_info WHERE mail = ? AND password = ?', (mail, password))
         user = cursor.fetchone()
-
         conn.close()
 
         if user:
