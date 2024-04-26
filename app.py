@@ -256,7 +256,7 @@ def openpersona():
     return render_template('persona.html')
 
 
-
+print('asdasdasd')
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
