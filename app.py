@@ -31,7 +31,7 @@ def login():
         password = request.form.get('password')
 
         if mail == 'admin' and password == 'admin':
-            return render_template('admin.html')  # Переход на страницу администратора
+            return redirect("/admin")  # Переход на страницу администратора
 
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
@@ -88,6 +88,39 @@ def open_tutor():
     return render_template('tutorial.html')
 
 
+@app.route('/admin', methods=['GET', 'POST'])
+def openadmintable():
+    conn = sqlite3.connect('new_teachers.sqlite')
+    cursor = conn.cursor()
+
+    # Запрос данных из таблицы application
+    cursor.execute("SELECT * FROM application")
+    rows = cursor.fetchall()
+
+    # Преобразование данных в список
+    applications_list = []
+
+    for row in rows:
+        application = {
+            'id': row[0],
+            'teacher_name': row[1],
+            'mail': row[2],
+            'phone_number': row[3],
+            'shirt_info': row[4]
+        }
+        if all(value for value in application.values()):
+            applications_list.append(application)
+        else:
+            # Удаление пустой заявки из базы данных
+            cursor.execute("DELETE FROM application WHERE id = ?", (row[0],))
+            conn.commit()
+
+
+    # Закрытие соединения с базой данных
+    conn.close()
+    return render_template('admin.html', applications=applications_list)
+
+
 @app.route('/go_code')
 def open_codeditor():
     return render_template('codeeditor.html')
@@ -101,7 +134,7 @@ def openself():
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
 
-        cursor.execute('SELECT * FROM user_info WHERE mail = ? AND password = ?', (mail, password))
+        cursor.execute('SELECT * FROM user_info ( mail = ? AND password = ?', (mail, password))
         user = cursor.fetchone()
 
         conn.close()
@@ -189,9 +222,24 @@ def view_file(filename):
 def open_task():
     return render_template('task.html')
 
-@app.route('/new_teacher')
+
+@app.route('/new_teacher', methods=['GET', 'POST'])
 def openpersona():
+    if request.method == 'POST':
+        db = 'new_teachers.sqlite'
+        mail = request.form.get('mail')
+        teacher_name = request.form.get('teacher_name')
+        phone_number = request.form.get('phone_number')
+        shirt_info = request.form.get('shirt_info')
+        conn = sqlite3.connect(db)
+        cursor = conn.cursor()
+        cursor.execute('INSERT INTO application (teacher_name, mail, phone_number, shirt_info) VALUES (?, ?, ?, ?)', (teacher_name, mail, phone_number, shirt_info))
+        conn.commit()  # добавьте эту строку для сохранения изменений в базе данных
+        conn.close()
+        return render_template('wait.html')
     return render_template('persona.html')
+
+
 
 
 if __name__ == '__main__':
