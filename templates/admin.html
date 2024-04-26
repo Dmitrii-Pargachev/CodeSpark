@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,15 +20,18 @@
             <td>{{ application['phone_number'] }}</td>
             <td>{{ application['shirt_info'] }}</td>
             <td>
-                <form action="/approve/{{ application['id'] }}" method="post">
-                    <button type="submit">Одобрить</button>
-                </form>
-                <form action="/reject/{{ application['id'] }}" method="post">
-                    <button type="submit">Отклонить</button>
-                </form>
+               <form action="/admin" method="POST">
+    <input type="hidden" name="application_id" value="{{ application['id'] }}">
+    <input type="submit" name="approve_{{ application['id'] }}" value="Одобрить">
+</form>
+
+<form action="/admin" method="POST">
+    <input type="hidden" name="application_id" value="{{ application['id'] }}">
+    <input type="submit" name="reject_{{ application['id'] }}" value="Отклонить">
+</form>
+
             </td>
         </tr>
         {% endfor %}
     </table>
 </body>
-</html>

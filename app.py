@@ -100,6 +100,25 @@ def openadmintable():
     # Преобразование данных в список
     applications_list = []
 
+    if request.method == 'POST':
+        application_id = request.form['application_id']
+
+        for key in request.form:
+            if key.startswith('approve_'):
+                # Обработка одобрения заявки по application_id
+                # Добавление пользователя в таблицу wait
+                cursor.execute("INSERT INTO wait SELECT * FROM application WHERE id = ?", (application_id,))
+                # Удаление заявки из таблицы application
+                cursor.execute("DELETE FROM application WHERE id = ?", (application_id,))
+                print('ПРИНЯТ')
+            elif key.startswith('reject_'):
+                # Обработка отклонения заявки по application_id
+                # Удаление заявки из таблицы application
+                cursor.execute("DELETE FROM application WHERE id = ?", (application_id,))
+                print('НЕ ПРИНЯТ')
+
+        conn.commit()
+
     for row in rows:
         application = {
             'id': row[0],
@@ -119,6 +138,7 @@ def openadmintable():
     # Закрытие соединения с базой данных
     conn.close()
     return render_template('admin.html', applications=applications_list)
+
 
 
 @app.route('/go_code')
@@ -203,10 +223,6 @@ def open_lessons():
 
 
 @app.route('/files')
-def list_files():
-    return list_files()
-
-
 def list_files():
     files = [(f, f) for f in os.listdir(app.config['UPLOAD_FOLDER'])]
     return render_template('view_files.html', files=files)
