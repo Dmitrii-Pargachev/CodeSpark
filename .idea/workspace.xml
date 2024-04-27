@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="устранение оишбки &quot;GET /style.css HTTP/1.1&quot; - 404">
+    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="v.3 Отправление заявок учителей админинстратору системы на одобрение">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/databasa.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/databasa.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/self.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/self.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/view_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/view_files.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_teachers.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/new_teachers.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/persona.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/persona.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -30,8 +30,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="MIXED" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dmitrii-Pargachev&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="5c166946-4a2d-4932-9149-1e7c6e7f454a" />
+        <option name="url" value="https://github.com/Dmitrii-Pargachev/CodeSpark.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -42,21 +53,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dimon/OneDrive/Рабочий стол/CodeSpark&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.app (1).executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "16ebea14",
+    "last_opened_file_path": "C:/Users/dimon/OneDrive/Рабочий стол/CodeSpark",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dimon\OneDrive\Рабочий стол\CodeSpark" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.app (1)">
     <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeSpark" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -78,6 +97,7 @@
     </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeSpark" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -97,30 +117,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\bayar\AppData\Local\Programs\Python\Python311-32\python.exe" />
-      <option name="SDK_NAME" value="Python 3.11" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeSpark" />
+      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -140,11 +139,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.app (1)" />
-      <item itemvalue="Python.app" />
-      <item itemvalue="Python.test" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.app (1)" />
@@ -177,14 +171,47 @@
       <option name="project" value="LOCAL" />
       <updated>1711952873559</updated>
     </task>
-    <task id="LOCAL-00002" summary="устранение оишбки &quot;GET /style.css HTTP/1.1&quot; - 404">
-      <created>1713268463151</created>
+    <task id="LOCAL-00002" summary="Авторизация админинстратора системы">
+      <option name="closed" value="true" />
+      <created>1714125523491</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1713268463151</updated>
+      <updated>1714125523491</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="тестовая страничка админинстратора">
+      <option name="closed" value="true" />
+      <created>1714125803855</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714125803855</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Отправление заявок учителей админинстратору системы на одобрение">
+      <option name="closed" value="true" />
+      <created>1714134346129</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714134346129</updated>
+    </task>
+    <task id="LOCAL-00005" summary="v.2 Отправление заявок учителей админинстратору системы на одобрение">
+      <option name="closed" value="true" />
+      <created>1714141328842</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714141328842</updated>
+    </task>
+    <task id="LOCAL-00006" summary="v.3 Отправление заявок учителей админинстратору системы на одобрение">
+      <option name="closed" value="true" />
+      <created>1714142475403</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714142475403</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +227,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit !!!&#10;Изначальный код проекта" />
-    <MESSAGE value="устранение оишбки &quot;GET /style.css HTTP/1.1&quot; - 404" />
-    <option name="LAST_COMMIT_MESSAGE" value="устранение оишбки &quot;GET /style.css HTTP/1.1&quot; - 404" />
+    <MESSAGE value="Авторизация админинстратора системы" />
+    <MESSAGE value="тестовая страничка админинстратора" />
+    <MESSAGE value="Отправление заявок учителей админинстратору системы на одобрение" />
+    <MESSAGE value="v.2 Отправление заявок учителей админинстратору системы на одобрение" />
+    <MESSAGE value="v.3 Отправление заявок учителей админинстратору системы на одобрение" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.3 Отправление заявок учителей админинстратору системы на одобрение" />
   </component>
 </project>

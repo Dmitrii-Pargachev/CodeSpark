@@ -34,4 +34,27 @@
         </tr>
         {% endfor %}
     </table>
+<h1>Список ожидающих одобренных одобренных заявок</h1>
+<table>
+    <tr>
+        <th>ФИО</th>
+        <th>Почта</th>
+        <th>Номер телефона</th>
+        <th>Краткая информация</th>
+    </tr>
+    {% for waiting in waiting %}
+    <tr>
+        <td>{{ waiting['teacher_name'] }}</td>
+        <td>{{ waiting['mail'] }}</td>
+        <td>{{ waiting['phone_number'] }}</td>
+        <td>{{ waiting['shirt_info'] }}</td>
+        <td>
+            <form action="/admin" method="POST">
+                <input type="hidden" name="application_id" value="{{ waiting['id'] }}">
+                <input type="submit" name="accept_{{ waiting['id'] }}" value="Принять">
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
 </body>

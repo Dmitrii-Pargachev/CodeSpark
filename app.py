@@ -96,13 +96,16 @@ def openadmintable():
     # Запрос данных из таблицы application
     cursor.execute("SELECT * FROM application")
     rows = cursor.fetchall()
+    # Запрос данных из таблицы wait
+    cursor.execute("SELECT * FROM wait")
+    waits = cursor.fetchall()
 
     # Преобразование данных в список
     applications_list = []
+    waiting_list = []
 
     if request.method == 'POST':
         application_id = request.form['application_id']
-
         for key in request.form:
             if key.startswith('approve_'):
                 # Обработка одобрения заявки по application_id
@@ -116,6 +119,13 @@ def openadmintable():
                 # Удаление заявки из таблицы application
                 cursor.execute("DELETE FROM application WHERE id = ?", (application_id,))
                 print('НЕ ПРИНЯТ')
+            elif key.startswith('accept_'):
+                # Обработка одобрения заявки по application_id
+                cursor.execute("SELECT * FROM wait WHERE id = ?", (application_id,))
+                if not cursor.fetchone():
+                    cursor.execute("INSERT INTO wait SELECT * FROM wait WHERE id = ?", (application_id,))
+                cursor.execute("DELETE FROM wait WHERE id = ?", (application_id,))
+                print('ОКОНЧАТЕЛЬНО ПРИНЯТ')
 
         conn.commit()
 
@@ -134,11 +144,24 @@ def openadmintable():
             cursor.execute("DELETE FROM application WHERE id = ?", (row[0],))
             conn.commit()
 
+    for i in waits:
+        waiting = {
+            'id': i[0],
+            'teacher_name': i[1],
+            'mail': i[2],
+            'phone_number': i[3],
+            'shirt_info': i[4]
+        }
+        if all(value for value in waiting.values()):
+            waiting_list.append(waiting)
+        else:
+            # Удаление пустой заявки из базы данных
+            cursor.execute("DELETE FROM wait WHERE id = ?", (i[0],))
+            conn.commit()
 
     # Закрытие соединения с базой данных
     conn.close()
-    return render_template('admin.html', applications=applications_list)
-
+    return render_template('admin.html', applications=applications_list, waiting=waiting_list)
 
 
 @app.route('/go_code')
