@@ -4,6 +4,7 @@ import traceback
 import io
 import sys
 import os
+import code
 
 app = Flask(__name__)
 DATABASE = 'databasa.sqlite'
@@ -167,7 +168,6 @@ def openadmintable():
     return render_template('admin.html', applications=applications_list, waiting=waiting_list)
 
 
-
 @app.route('/go_code')
 def open_codeditor():
     return render_template('codeeditor.html')
@@ -175,19 +175,7 @@ def open_codeditor():
 
 @app.route('/self')
 def openself():
-        mail = request.form.get('mail')
-        password = request.form.get('password')
-
-        conn = sqlite3.connect(DATABASE)
-        cursor = conn.cursor()
-
-        cursor.execute('SELECT * FROM user_info ( mail = ? AND password = ?', (mail, password))
-        user = cursor.fetchone()
-
-        conn.close()
-
-        
-        return render_template('self.html', user=user)
+    return render_template('self.html')
 
 
 @app.route('/runcode', methods=['POST'])
@@ -195,29 +183,22 @@ def run_code():
     try:
         data = request.get_json()
         code = data['code']
-        
-        # Capturing the standard output
+
+        if 'input(' in code:
+            user_input = data['user_input']
+            sys.stdin = io.StringIO(user_input)
+
         stdout = io.StringIO()
         sys.stdout = stdout
-
-        # Redirect input to the Python code
-        sys.stdin = io.StringIO("User input goes here")
-
         exec(code, globals())
-
-        # Get the result and restore the original stdout and stdin
         result = stdout.getvalue()
         sys.stdout = sys.__stdout__
         sys.stdin = sys.__stdin__
 
         return jsonify({'result': result})
+
     except Exception as e:
         return jsonify({'error': str(e), 'traceback': traceback.format_exc()})
-
-
-UPLOAD_FOLDER = 'uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 
 @app.route('/upload')
@@ -283,7 +264,6 @@ def openpersona():
         conn.close()
         return render_template('wait.html')
     return render_template('persona.html')
-
 
 
 if __name__ == '__main__':

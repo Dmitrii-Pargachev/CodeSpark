@@ -64,27 +64,33 @@
     <pre id="result"></pre>
 
     <script>
-        function runPythonCode() {
-            // Получить код из текстового поля
-            var code = document.getElementById("pythonCode").value;
+            function runPythonCode() {
+    var code = document.getElementById("pythonCode").value;
 
-            // Отправить код на сервер для выполнения (ваш серверный код Flask)
-            fetch('/runcode', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ code: code }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Вывести результат на страницу
-                document.getElementById("result").innerText = data.result;
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        }
+    // Check if the code contains input() function
+    if (code.includes("input(")) {
+        var userInput = prompt("Введите значение:");
+    } else {
+        var userInput = "";  // Если нет функции input(), передаем пустую строку
+    }
+
+    fetch('/runcode', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ code: code, user_input: userInput }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("result").innerText = data.result;
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+
+
     </script>
 </div>
 </div>
