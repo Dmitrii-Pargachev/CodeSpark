@@ -4,7 +4,6 @@ import traceback
 import io
 import sys
 import os
-import code
 
 app = Flask(__name__)
 DATABASE = 'databasa.sqlite'
@@ -38,11 +37,19 @@ def login():
         conn.close()
 
         if user:
-            return render_template('welcome.html', user=user)
+            if user[4] == 'teacher':
+                return redirect("/teacher")  # Переход на страницу учителя
+            elif user[4] == 'student':
+                return render_template('welcome.html', user=user)  # Переход на страницу ученика
         else:
             return render_template('error.html', message='Invalid credentials')
 
     return render_template('login.html')
+
+
+@app.route('/teacher')
+def opening_html():
+    return render_template('teacher.html')
 
 
 @app.route('/submit', methods=['POST'])

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="v.5 Отправление заявок учителей админинстратору системы на одобрение. Теперь если админинстратор принимает учителя, создается учитель в бд с пользователями">
+    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="Изменение работы исполнителя python кода. Добавлена возможность пользоваться командой input()">
+      <change afterPath="$PROJECT_DIR$/templates/teacher.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/databasa.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/databasa.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/codeeditor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/codeeditor.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "3b747c2d",
+    "git-widget-placeholder": "a704255e",
     "last_opened_file_path": "C:/Users/dimon/OneDrive/Рабочий стол/CodeSpark",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -223,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714214938629</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Изменение работы исполнителя python кода. Добавлена возможность пользоваться командой input()">
+      <option name="closed" value="true" />
+      <created>1714220299504</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714220299504</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +253,7 @@
     <MESSAGE value="v.2 Отправление заявок учителей админинстратору системы на одобрение" />
     <MESSAGE value="v.3 Отправление заявок учителей админинстратору системы на одобрение" />
     <MESSAGE value="v.5 Отправление заявок учителей админинстратору системы на одобрение. Теперь если админинстратор принимает учителя, создается учитель в бд с пользователями" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.5 Отправление заявок учителей админинстратору системы на одобрение. Теперь если админинстратор принимает учителя, создается учитель в бд с пользователями" />
+    <MESSAGE value="Изменение работы исполнителя python кода. Добавлена возможность пользоваться командой input()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменение работы исполнителя python кода. Добавлена возможность пользоваться командой input()" />
   </component>
 </project>
