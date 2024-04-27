@@ -60,10 +60,32 @@
 <div class="center">
   <img class="img_on" src="https://i.pinimg.com/originals/f5/36/01/f53601133f236d1cb167ac19f05a3d60.gif">
 </div>
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+  <div class="footer">&copy;<span id="year"> </span><span> CodeSpark. Все права защищены.</span></div>
+</footer>
 <style>
-    body{
+body{
     background-color: #480CA8;
     font-size: 20px;
+}
+.footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+#page-content {
+  flex: 1 0 auto;
 }
 .img_on{
   width: 50%;
@@ -117,7 +139,11 @@
 function dda(){
     document.querySelector('.block').style.left = '-500px';
 }
+let year = document.querySelector("#year");
 
+$(document).ready(function () {
+  year.innerText = new Date().getFullYear();
+});
 </script>
 </body>
 </html>

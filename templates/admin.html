@@ -78,21 +78,19 @@ td{
             <td>{{ application['phone_number'] }}</td>
             <td>{{ application['shirt_info'] }}</td>
             <td>
-               <form action="/admin" method="POST">
-    <input type="hidden" name="application_id" value="{{ application['id'] }}">
-    <input type="submit" class="approve" name="approve_{{ application['id'] }}" value="Одобрить">
-</form>
-
-<form action="/admin" method="POST">
-    <input type="hidden" name="application_id" value="{{ application['id'] }}">
-    <input type="submit" class="reject" name="reject_{{ application['id'] }}" value="Отклонить">
-</form>
-
+            <form action="/admin" method="POST">
+                <input type="hidden" name="application_id" value="{{ application['id'] }}">
+                <input type="submit" class="approve" name="approve_{{ application['id'] }}" value="Одобрить">
+            </form>
+            <form action="/admin" method="POST">
+                <input type="hidden" name="application_id" value="{{ application['id'] }}">
+                <input type="submit" class="reject" name="reject_{{ application['id'] }}" value="Отклонить">
+            </form>
             </td>
         </tr>
         {% endfor %}
     </table>
-    </figure>
+</figure>
 <figure>
 <h1>Список ожидающих одобренных заявок</h1>
 </figure>

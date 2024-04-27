@@ -33,6 +33,10 @@
                                 <input type="text" name="mail" class="form-control" placeholder="Введите Email" value="">
                             </div>
                             <div class="col-md-12">
+                                <label class="labels">Password</label>
+                                <input type="password" name="password" class="form-control" placeholder="Введите пароль" value="">
+                            </div>
+                            <div class="col-md-12">
                                 <label class="labels">Краткая информация</label>
                                 <textarea name="shirt_info" class="form-control" placeholder="Введите краткую информацию о себе"></textarea>
                             </div>
@@ -45,6 +49,9 @@
             </div>
         </div>
     </div>
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+        <div class="footer">&copy;<span id="year"> </span><span> CodeSpark. Все права защищены.</span></div>
+      </footer>
     <style>
         body {
             background-color: #480CA8;
@@ -126,6 +133,22 @@ color: #682773;
             cursor: pointer;
             border: solid 1px #BA68C8;
         }
+        .footer {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
     </style>
 
     <script>
@@ -135,6 +158,11 @@ color: #682773;
         function dda() {
             document.querySelector('.block').style.left = '-500px';
         }
+        let year = document.querySelector("#year");
+
+$(document).ready(function () {
+  year.innerText = new Date().getFullYear();
+});
     </script>
 </body>
 </html>

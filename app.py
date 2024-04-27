@@ -171,19 +171,7 @@ def open_codeditor():
 
 @app.route('/self')
 def openself():
-        mail = request.form.get('mail')
-        password = request.form.get('password')
-
-        conn = sqlite3.connect(DATABASE)
-        cursor = conn.cursor()
-
-        cursor.execute('SELECT * FROM user_info ( mail = ? AND password = ?', (mail, password))
-        user = cursor.fetchone()
-
-        conn.close()
-
-        
-        return render_template('self.html', user=user)
+    return render_template('self.html')
 
 
 @app.route('/runcode', methods=['POST'])
@@ -267,6 +255,7 @@ def openpersona():
     if request.method == 'POST':
         db = 'new_teachers.sqlite'
         mail = request.form.get('mail')
+        password = request.form.get('password')
         teacher_name = request.form.get('teacher_name')
         phone_number = request.form.get('phone_number')
         shirt_info = request.form.get('shirt_info')

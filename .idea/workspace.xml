@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="добавление стилей на странички админа">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/databasa.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/databasa.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/new_teachers.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/new_teachers.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/codeeditor.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/codeeditor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/lessons.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lessons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/persona.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/persona.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/wait.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/wait.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/self.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/self.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tutorial.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tutorial.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/view_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/view_files.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -221,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714142475403</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="добавление стилей на странички админа">
+      <created>1714200730706</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714200730706</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,6 +259,7 @@
     <MESSAGE value="Отправление заявок учителей админинстратору системы на одобрение" />
     <MESSAGE value="v.2 Отправление заявок учителей админинстратору системы на одобрение" />
     <MESSAGE value="v.3 Отправление заявок учителей админинстратору системы на одобрение" />
-    <option name="LAST_COMMIT_MESSAGE" value="v.3 Отправление заявок учителей админинстратору системы на одобрение" />
+    <MESSAGE value="добавление стилей на странички админа" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавление стилей на странички админа" />
   </component>
 </project>
