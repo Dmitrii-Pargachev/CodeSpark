@@ -1,11 +1,69 @@
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Заявки</title>
 </head>
+<style>
+    body{
+    background-color: #480CA8;
+    font-size: 20px;
+    color: white;
+}
+figure{
+    display: flex;
+    justify-content: center;
+}
+table{
+    vertical-align: top;
+    text-align: center;
+}
+.container{
+    background-color:  #7209B7;
+    width: 50%;
+    border-radius: 20px;
+}
+th{
+    padding: 10px;
+}
+td{
+    padding: 10px;
+}
+.approve{
+    width: 100px;
+    height: 20px;
+    background-color: #480CA8;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+.approve:hover{
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+.reject{
+    width: 100px;
+    height: 20px;
+    background-color: #480CA8;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+.reject:hover{
+    background-color: white;
+    color: black;
+    transition: .5s;
+}
+</style>
 <body>
+<figure>
+<div class="container">
+    <figure>
     <h1>Список заявок</h1>
+    </figure>
+    <figure>
     <table>
         <tr>
             <th>ФИО</th>
@@ -22,19 +80,23 @@
             <td>
                <form action="/admin" method="POST">
     <input type="hidden" name="application_id" value="{{ application['id'] }}">
-    <input type="submit" name="approve_{{ application['id'] }}" value="Одобрить">
+    <input type="submit" class="approve" name="approve_{{ application['id'] }}" value="Одобрить">
 </form>
 
 <form action="/admin" method="POST">
     <input type="hidden" name="application_id" value="{{ application['id'] }}">
-    <input type="submit" name="reject_{{ application['id'] }}" value="Отклонить">
+    <input type="submit" class="reject" name="reject_{{ application['id'] }}" value="Отклонить">
 </form>
 
             </td>
         </tr>
         {% endfor %}
     </table>
-<h1>Список ожидающих одобренных одобренных заявок</h1>
+    </figure>
+<figure>
+<h1>Список ожидающих одобренных заявок</h1>
+</figure>
+<figure>
 <table>
     <tr>
         <th>ФИО</th>
@@ -51,10 +113,14 @@
         <td>
             <form action="/admin" method="POST">
                 <input type="hidden" name="application_id" value="{{ waiting['id'] }}">
-                <input type="submit" name="accept_{{ waiting['id'] }}" value="Принять">
+                <input class="approve" type="submit" name="accept_{{ waiting['id'] }}" value="Принять">
             </form>
         </td>
     </tr>
     {% endfor %}
 </table>
+</figure>
+</div>
+</figure>
 </body>
+</html>

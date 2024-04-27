@@ -11,9 +11,7 @@
       font-size: 20px;
   }
   .but{
-    display: flex;
-    justify-content: center;
-  }
+}
   
   .menu{
       margin: 5px;
@@ -99,7 +97,10 @@
       border: 1px solid #920CFB;
       font-size: small;
   }
-  
+  .center{
+    display: flex;
+    justify-content: center;
+  }
   
   
   
@@ -187,7 +188,17 @@
       height: 54px;
       background: linear-gradient(97deg, #7209B7 39.28%, #CE17A8 67.05%, #F72585 97.48%);
       color: white;
-      margin: 5%;
+      margin: 7.5%;
+      border: none;
+  }
+  .button3_dima{
+    font-family: Lemonada;
+      border-radius: 20px;
+      width: 220px;
+      height: 84px;
+      background: linear-gradient(97deg, #7209B7 39.28%, #CE17A8 67.05%, #F72585 97.48%);
+      color: white;
+      margin: 7.5%;
       border: none;
   }
   .box{
@@ -206,6 +217,7 @@
       border: rgba(184, 128, 255, 0.92);
   }
   /* модальное окно */
+
   </style>
 </head>
 <body>
@@ -220,19 +232,17 @@
     <li class="li">Проверка заданий преподавателем</li>
     <li class="li"><u>Бесплатно!!!</u></li>
     <li class="li">Обучение с любой точки мира</li>
-    <div class="but">
-        <div class="btn1">
-            <button class="button3" onclick="window.location.href='/login'"> Вход ученика</button>
-            <button class="button3" onclick="window.location.href='/login'"> Вход учителя </button>
+    <div class="center">
+        <div class="but">
+            <div class="btn1">
+                <button class="button3" onclick="window.location.href='/login'"> Вход ученика</button>
+            </div>
+            <div class="btn2">
+                <button class="button3" onclick="window.location.href='/new_teacher'"> Регистрация учителя </button>
+            </div>
         </div>
-        <div class="btn2">
-            <button class="button3" id="myBtn">Регистрация ученика</button>
-            <button class="button3" onclick="window.location.href='/new_teacher'"> Регистрация учителя </button>
-           
-            
-        </div>
-    
-  </div>
+            <button class="button3_dima" id="myBtn"> Регистрация ученика </button>  
+    </div>
 </div>
 </div>
 
