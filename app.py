@@ -1,4 +1,4 @@
-from flask import Flask, g, render_template, send_file, request, redirect, url_for, jsonify
+from flask import Flask, g, render_template, send_file, request, redirect, jsonify
 import sqlite3
 import traceback
 import io
@@ -7,7 +7,6 @@ import os
 
 app = Flask(__name__)
 DATABASE = 'databasa.sqlite'
-print('asdasdasdasdqsd')
 
 
 def get_db():
@@ -19,9 +18,7 @@ def get_db():
 
 @app.route('/')
 def index():
-    # Пример передачи переменной Python в HTML
-    my_variable = "Привет, это переменная из Python!"
-    return render_template('index.html', my_variable=my_variable)
+    return render_template('index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -71,7 +68,7 @@ def register():
         cursor = conn.cursor()
 
         # Вставляем данные в таблицу
-        cursor.execute('INSERT INTO user_info (name, mail, password) VALUES (?, ?, ?)', (name, mail, password))
+        cursor.execute('INSERT INTO user_info (name, mail, password, user_status) VALUES (?, ?, ?, ?)', (name, mail, password, 'student'))
         
         # Сохраняем изменения
         conn.commit()
@@ -91,6 +88,8 @@ def open_tutor():
 @app.route('/admin', methods=['GET', 'POST'])
 def openadmintable():
     conn = sqlite3.connect('new_teachers.sqlite')
+    conn2 = sqlite3.connect(DATABASE)
+    cursor2 = conn2.cursor()
     cursor = conn.cursor()
 
     # Запрос данных из таблицы application
@@ -120,13 +119,17 @@ def openadmintable():
                 cursor.execute("DELETE FROM application WHERE id = ?", (application_id,))
                 print('НЕ ПРИНЯТ')
             elif key.startswith('accept_'):
-                # Обработка одобрения заявки по application_id
-                cursor.execute("SELECT * FROM wait WHERE id = ?", (application_id,))
-                if not cursor.fetchone():
-                    cursor.execute("INSERT INTO wait SELECT * FROM wait WHERE id = ?", (application_id,))
-                cursor.execute("DELETE FROM wait WHERE id = ?", (application_id,))
-                print('ОКОНЧАТЕЛЬНО ПРИНЯТ')
-
+                data = cursor.execute("SELECT * FROM wait WHERE id = ?", (application_id,)).fetchone()
+                print(data)
+                if data:
+                    print(data[1], data[2], data[5])
+                    cursor2.execute("INSERT INTO user_info (name, mail, password, user_status) VALUES (?, ?, ?, ?)",
+                                    (data[1], data[2], data[5], 'teacher'))
+                    cursor.execute("DELETE FROM wait WHERE id = ?", (application_id,))
+                    print('ОКОНЧАТЕЛЬНО ПРИНЯТ И ДОБАВЛЕН В БД')
+                else:
+                    print('Данных по данному идентификатору не найдено')
+                conn2.commit()
         conn.commit()
 
     for row in rows:
@@ -162,6 +165,7 @@ def openadmintable():
     # Закрытие соединения с базой данных
     conn.close()
     return render_template('admin.html', applications=applications_list, waiting=waiting_list)
+
 
 
 @app.route('/go_code')
@@ -270,16 +274,17 @@ def openpersona():
         teacher_name = request.form.get('teacher_name')
         phone_number = request.form.get('phone_number')
         shirt_info = request.form.get('shirt_info')
+        password = request.form.get('password')
         conn = sqlite3.connect(db)
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO application (teacher_name, mail, phone_number, shirt_info) VALUES (?, ?, ?, ?)', (teacher_name, mail, phone_number, shirt_info))
+        cursor.execute('INSERT INTO application (teacher_name, mail, phone_number, shirt_info, password) VALUES (?, '
+                       '?, ?, ?, ?)', (teacher_name, mail, phone_number, shirt_info, password))
         conn.commit()  # добавьте эту строку для сохранения изменений в базе данных
         conn.close()
         return render_template('wait.html')
     return render_template('persona.html')
 
 
-print('asdasdasd')
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
