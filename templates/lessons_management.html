@@ -134,7 +134,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Учебник
+              Управление учебником
             </a>
           </li>
       </ul>
@@ -145,41 +145,20 @@
     </div>
   </div>
 </nav>
-<!-- modal   -->
-    <div id="modal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Добавление курсов</h2>
-        <hr>
-        <form action="/course_management" method="POST">
-            <div class="modal-body" >
-                <label class="form-label">Название курса</label>
-                <input type="text" id="name_course" name="name_course" placeholder="Название курса">
-            </div>
-            <input type="hidden" name="_method" value="POST">
-            <hr>
-            <div class="modal-footer">
-                <input type="submit" class="btn_modal" value="добавить" name="submit_course">
-            </div>
-        </form>
-    </div>
-</div>
-
 <div class="container_content">
     {% for course in courses %}
-    <div class="content" onclick="window.location.href='/lessons_management'">
+    <div class="content">
         <div class="plus-icon">
             <span class="plus">{{ course }}</span>
         </div>
     </div>
     {% endfor %}
-    <div class="content" onclick="openModal()">
+    <div class="content" onclick="window.location.href='/task_management'">
         <div class="plus-icon">
-            <span class="plus">+</span>
+            <span class="plus">Добавить урок</span>
         </div>
     </div>
 </div>
-
 <script>
      function openModal() {
     document.getElementById('modal').style.display = 'block';

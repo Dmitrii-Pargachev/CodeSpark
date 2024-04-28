@@ -76,6 +76,16 @@ def open_courses():
     return render_template('course_management.html', courses=courses_list)
 
 
+@app.route('/lessons_management')
+def openles():
+    return render_template('lessons_management.html')
+
+
+@app.route('/task_management', methods=['GET', 'POST'])
+def opensome():
+    return render_template('task_managment.html')
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     # Получение данных из формы
