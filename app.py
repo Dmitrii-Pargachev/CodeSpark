@@ -182,7 +182,15 @@ def open_codeditor():
 
 @app.route('/self')
 def openself():
-    return render_template('self.html')
+    # Подключаемся к базе данных
+    conn = sqlite3.connect(DATABASE)
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM user_info')
+    users = cursor.fetchone()
+    # Закрываем соединение
+    conn.close()
+
+    return render_template('self.html', user=users)
 
 
 @app.route('/runcode', methods=['POST'])
