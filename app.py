@@ -37,9 +37,9 @@ def login():
         conn.close()
 
         if user:
-            if user[4] == 'teacher':
+            if user[5] == 'teacher':
                 return redirect("/teacher")  # Переход на страницу учителя
-            elif user[4] == 'student':
+            elif user[5] == 'student':
                 return render_template('welcome.html', user=user)  # Переход на страницу ученика
         else:
             return render_template('error.html', message='Invalid credentials')
@@ -70,13 +70,15 @@ def register():
         name = request.form.get('name')
         mail = request.form.get('mail')
         password = request.form.get('password')
+        phone_number = request.form.get('phone_number')
 
         # Подключаемся к базе данных
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
 
         # Вставляем данные в таблицу
-        cursor.execute('INSERT INTO user_info (name, mail, password, user_status) VALUES (?, ?, ?, ?)', (name, mail, password, 'student'))
+        cursor.execute('INSERT INTO user_info (name, mail, password, phone_number, user_status) VALUES (?, ?, ?, ?, ?)',
+                       [name, mail, password, phone_number, 'student'])
         
         # Сохраняем изменения
         conn.commit()
@@ -131,8 +133,9 @@ def openadmintable():
                 print(data)
                 if data:
                     print(data[1], data[2], data[5])
-                    cursor2.execute("INSERT INTO user_info (name, mail, password, user_status) VALUES (?, ?, ?, ?)",
-                                    (data[1], data[2], data[5], 'teacher'))
+                    cursor2.execute("INSERT INTO user_info (name, mail, password, phone_number, user_status) VALUES ("
+                                    "?, ?, ?, ?, ?)",
+                                    (data[1], data[2], data[5], data[3], 'teacher'))
                     cursor.execute("DELETE FROM wait WHERE id = ?", (application_id,))
                     print('ОКОНЧАТЕЛЬНО ПРИНЯТ И ДОБАВЛЕН В БД')
                 else:
