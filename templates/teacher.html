@@ -58,24 +58,13 @@
 </head>
 <body>
     <div class="block">
-        <div class="close" onclick="dda()">
-            <svg onclick="add()" width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.14645 2.85355C1.95118 2.65829 1.95118 2.34171 2.14645 2.14645C2.34171 1.95118 2.65829 1.95118 2.85355 2.14645L8 7.29289L13.1464 2.14645C13.3417 1.95118 13.6583 1.95118 13.8536 2.14645C14.0488 2.34171 14.0488 2.65829 13.8536 2.85355L8.70711 8L13.8536 13.1464C14.0488 13.3417 14.0488 13.6583 13.8536 13.8536C13.6583 14.0488 13.3417 14.0488 13.1464 13.8536L8 8.70711L2.85355 13.8536C2.65829 14.0488 2.34171 14.0488 2.14645 13.8536C1.95119 13.6583 1.95119 13.3417 2.14645 13.1464L7.29289 8L2.14645 2.85355Z" fill="white"/>
-                </svg>
-        </div>
-        <div class="item"><a class="line" href="/go_code">Тест кода</a></div>
+
         <div class="item"><a class="line" href="">Главная</a></div>
         <div class="item"><a class="line" href="/lessons">Уроки</a></div>
         <div class="item"><a class="line" href="/tutor">Учебник</a></div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
-    <svg  onclick="add()" width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12.5C2 12.2239 2.22386 12 2.5 12H13.5C13.7761 12 14 12.2239 14 12.5C14 12.7761 13.7761 13 13.5 13H2.5C2.22386 13 2 12.7761 2 12.5Z" fill="black"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 9.5C2 9.22386 2.22386 9 2.5 9H13.5C13.7761 9 14 9.22386 14 9.5C14 9.77614 13.7761 10 13.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z" fill="black"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6.5C2 6.22386 2.22386 6 2.5 6H13.5C13.7761 6 14 6.22386 14 6.5C14 6.77614 13.7761 7 13.5 7H2.5C2.22386 7 2 6.77614 2 6.5Z" fill="black"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 3.5C2 3.22386 2.22386 3 2.5 3H13.5C13.7761 3 14 3.22386 14 3.5C14 3.77614 13.7761 4 13.5 4H2.5C2.22386 4 2 3.77614 2 3.5Z" fill="black"/>
-        </svg>
     <a class="navbar-brand" href="#">Личный кабинет</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
       <span class="navbar-toggler-icon"></span>
@@ -83,14 +72,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Учебник</a>
+          <a class="nav-link active" aria-current="page" href="#">Управление учебником</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Тест кода</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link active" href="/course_management" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Управление курсами
+            </a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Проверка заданий
             </a>
           </li>
       </ul>

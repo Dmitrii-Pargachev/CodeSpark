@@ -52,6 +52,30 @@ def opening_html():
     return render_template('teacher.html')
 
 
+@app.route('/course_management', methods=['GET', 'POST'])
+def open_courses():
+    conn = sqlite3.connect('databasa.sqlite')
+    conn.row_factory = sqlite3.Row
+
+    if request.method == 'POST':
+        course_name = request.form['name_course']
+        cursor = conn.execute('SELECT name FROM courses WHERE name = ?', (course_name,))
+        existing_course = cursor.fetchone()
+        if existing_course:
+            # Курс с таким именем уже существует
+            print('ЕЩЕ ЧЕ')
+        else:
+            # Курса с таким именем не существует, можно добавлять
+            conn.execute('INSERT INTO courses (name) VALUES (?)', (course_name,))
+            conn.commit()
+
+    courses = conn.execute('SELECT name FROM courses').fetchall()
+    courses_list = [course['name'] for course in courses]
+
+    conn.close()
+    return render_template('course_management.html', courses=courses_list)
+
+
 @app.route('/submit', methods=['POST'])
 def submit():
     # Получение данных из формы

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+           body{
+    background-color: #480CA8;
+    font-size: 20px;
+}
+.img_on{
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
+  margin: 5%;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu{
+    margin: 5px;
+    cursor: pointer;
+}
+.image{
+    cursor: pointer;
+    position: absolute;
+}
+.block{
+    background-color: #7209B7;
+    height: 100%;
+    width: 250px;
+    position: absolute;
+    transition: 2s;
+    left: -400px;
+    z-index: 7;
+}
+.item{
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+}
+.line{
+    text-decoration: none;
+    color: white;
+}
+.image{
+    height: 100vh;
+}
+.plus-icon {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.modal-content {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+.content{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+    cursor: pointer;
+}
+.container_content{
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.modal-footer{
+    display: flex;
+    justify-content: center;
+}
+.btn_modal{
+    background-color: #7209B7;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 35px;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <svg  onclick="add()" width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 12.5C2 12.2239 2.22386 12 2.5 12H13.5C13.7761 12 14 12.2239 14 12.5C14 12.7761 13.7761 13 13.5 13H2.5C2.22386 13 2 12.7761 2 12.5Z" fill="black"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 9.5C2 9.22386 2.22386 9 2.5 9H13.5C13.7761 9 14 9.22386 14 9.5C14 9.77614 13.7761 10 13.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z" fill="black"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 6.5C2 6.22386 2.22386 6 2.5 6H13.5C13.7761 6 14 6.22386 14 6.5C14 6.77614 13.7761 7 13.5 7H2.5C2.22386 7 2 6.77614 2 6.5Z" fill="black"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 3.5C2 3.22386 2.22386 3 2.5 3H13.5C13.7761 3 14 3.22386 14 3.5C14 3.77614 13.7761 4 13.5 4H2.5C2.22386 4 2 3.77614 2 3.5Z" fill="black"/>
+        </svg>
+    <a class="navbar-brand" href="#">Личный кабинет</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/teacher">Главная</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Учебник
+            </a>
+          </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+        <button class="btn btn-outline-success" type="submit">Поиск</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- modal   -->
+    <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Добавление курсов</h2>
+        <hr>
+        <form action="/course_management" method="POST">
+            <div class="modal-body">
+                <label class="form-label">Название курса</label>
+                <input type="text" id="name_course" name="name_course" placeholder="Название курса">
+            </div>
+            <input type="hidden" name="_method" value="POST">
+            <hr>
+            <div class="modal-footer">
+                <input type="submit" class="btn_modal" value="добавить" name="submit_course">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container_content">
+    {% for course in courses %}
+    <div class="content">
+        <div class="plus-icon">
+            <span class="plus">{{ course }}</span>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="content" onclick="openModal()">
+        <div class="plus-icon">
+            <span class="plus">+</span>
+        </div>
+    </div>
+</div>
+
+<script>
+     function openModal() {
+    document.getElementById('modal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+</script>
+</body>
+</html>
