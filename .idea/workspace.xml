@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="добавление курсов учителем, курсы не повторяются по названию">
-      <change afterPath="$PROJECT_DIR$/templates/lessons_management.html" afterDir="false" />
+    <list default="true" id="925d32cc-18c8-42de-a50d-a2bce3da40ad" name="Changes" comment="v.2 добавление курсов учителем, курсы не повторяются по названию">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/databasa.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/databasa.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/course_management.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course_management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/task_managment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/task_managment.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="8d446e5872e02aa3e7c8323606fa5bac0e1e97fc" />
+        <entry key="$PROJECT_DIR$" value="a5e695e90147c63d084a7ad96bb79be029a9b626" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,7 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "5fef82f0",
+    "git-widget-placeholder": "742d7dfd",
     "last_opened_file_path": "C:/Users/dimon/OneDrive/Рабочий стол/CodeSpark",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -342,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714307353946</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="v.2 добавление курсов учителем, курсы не повторяются по названию">
+      <option name="closed" value="true" />
+      <created>1714313358221</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714313358221</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -372,6 +376,7 @@
     <MESSAGE value="v.5 Отправление заявок учителей админинстратору системы на одобрение. Теперь если админинстратор принимает учителя, создается учитель в бд с пользователями" />
     <MESSAGE value="отображение данных в личном кабинете" />
     <MESSAGE value="добавление курсов учителем, курсы не повторяются по названию" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавление курсов учителем, курсы не повторяются по названию" />
+    <MESSAGE value="v.2 добавление курсов учителем, курсы не повторяются по названию" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.2 добавление курсов учителем, курсы не повторяются по названию" />
   </component>
 </project>
